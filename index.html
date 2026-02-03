@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>چت‌بات هوش مصنوعی</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="terminal-container">
+        <div class="chat-window">
+            <div class="window-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <span class="title">چت بات هوش مصنوعی</span>
+            </div>
+            <div class="chat-history" id="chat-history">
+                <div class="message bot-message">
+                    <span class="user-label">AI:</span>
+                    <span class="text">سلام! آماده دریافت متن، عکس 📸 و پیام صوتی 🎙️ هستم.</span>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div id="image-preview-area" style="display: none;">
+                    <span class="preview-label">تصویر آپلود شده:</span>
+                    <img id="image-preview" class="uploaded-image-preview" alt="تصویر پیش‌نمایش" />
+                    <button id="clear-image-button" class="clear-image-button" aria-label="حذف تصویر">
+            <i class="fas fa-times"></i>
+          </button>
+                </div>
+                <div class="input-controls">
+                    <label for="image-upload" class="icon-button upload-button" aria-label="آپلود تصویر یا تولید عکس">
+            <i class="fas fa-image"></i>
+          </label>
+                    <input type="file" id="image-upload" accept="image/*" hidden>
+                    <button class="icon-button record-button" id="record-button" aria-label="ضبط صدا">
+            <i class="fas fa-microphone"></i>
+          </button>
+                    <input type="text" placeholder="پیام خود را بنویسید... (Enter برای ارسال)" class="message-input" id="message-input">
+                    <button class="send-button" id="send-button">ارسال</button>
+                </div>
+                <span class="user-input-tag">$\lt$user</span>
+            </div>
+        </div>
+    </div>
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">پاسخ هوش مصنوعی: کد یا جدول</span>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content-pre" style="white-space: pre-wrap;"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="copy-code-button" class="modal-button"><i class="fas fa-copy"></i> کپی</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
